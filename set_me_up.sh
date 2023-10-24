@@ -157,10 +157,12 @@ echo alias commit=\"git commit -m \" >> ~/.bashrc
 echo alias checkout=\"git checkout \" >> ~/.bashrc
 echo alias gb=\"git branch\" >> ~/.bashrc
 echo alias gl=\"git log\" >> ~/.bashrc
+echo alias gp=\"git push\" >> ~/.bashrc
 echo alias h=\"cd ~\" >> ~/.bashrc
 echo alias d=\"cd ~/Downloads\" >> ~/.bashrc
 echo alias p=\"cd ~/projects\" >> ~/.bashrc
 echo alias c=\"cd ~/.config\" >> ~/.bashrc
+echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
 
 echo "Source new bashrc..."
 source ~/.bashrc
