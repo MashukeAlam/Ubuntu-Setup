@@ -29,7 +29,7 @@ Feel free to change the script up here and there to fit to your need. This scrip
  16. Install Ruby & Bundler & Rails (**Currently not working**)
  17. Install VS Code
  18. Install Insomnia Core
- 19. Install VLC
+ 19. Install MPV
  20. Install OBS
  21. Install KVM
  22. Install DBeaver
