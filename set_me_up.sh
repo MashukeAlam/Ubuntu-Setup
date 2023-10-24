@@ -120,9 +120,10 @@ sudo apt-get update && sudo apt-get install insomnia -y
 mkdir ~/.config/Insomnia/plugins && cd ~/.config/Insomnia/plugins
 git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
 
-echo 'Installing VLC'
-sudo apt-get install vlc -y
-sudo apt-get install vlc-plugin-access-extra libbluray-bdj libdvdcss2 -y
+echo 'Installing MPV'
+sudo apt install mpv -y
+echo UP add volume +2 >> ~/.config/mpv/input.conf
+echo UP add volume +2 >> ~/.config/mpv/input.conf
 
 echo 'Installing OBS Studio'
 sudo apt-get install ffmpeg -y && sudo snap install obs-studio
