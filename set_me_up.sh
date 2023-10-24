@@ -66,6 +66,9 @@ cd ~
 echo "Installing Gnome tweaks"
 sudo apt install gnome-tweak-tool -y
 
+echo "Doing some customization in gnomes..."
+gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+
 echo 'Installing NVM' 
 sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash)"
 
