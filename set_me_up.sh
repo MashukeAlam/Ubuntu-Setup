@@ -135,6 +135,10 @@ echo 'Installing fzf'
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
+echo 'Installing Peek' 
+sudo add-apt-repository ppa:peek-developers/stable -y
+sudo apt-get update && sudo apt-get install peek -y
+
 echo "Installing Google Chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
