@@ -42,6 +42,9 @@ git config --global user.email $git_config_user_email
 echo 'Installing FiraCode'
 sudo apt-get install fonts-firacode -y
 
+echo 'Installing SF Pro font'
+wget https://www.cufonfonts.com/get/font/download/d164d0130677c7a1d5bf59c5177e95cc
+
 echo "Installing macOS theme for all accent color..."
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
 cd ./WhiteSur-gtk-theme && ./install.sh -t all
