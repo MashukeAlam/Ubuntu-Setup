@@ -140,17 +140,17 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 echo "Setting up Bash aliases..."
-echo alias gs="git status" >> ~/.bashrc
-echo alias ga="git add ." >> ~/.bashrc
-echo alias gcm="git commit -m " >> ~/.bashrc
-echo alias commit="git commit -m " >> ~/.bashrc
-echo alias checkout="git checkout " >> ~/.bashrc
-echo alias gb="git branch" >> ~/.bashrc
-echo alias gl="git log" >> ~/.bashrc
-echo alias h="cd ~" >> ~/.bashrc
-echo alias d="cd ~/Downloads" >> ~/.bashrc
-echo alias p="cd ~/projects" >> ~/.bashrc
-echo alias c="cd ~/.config" >> ~/.bashrc
+echo alias gs=\"git status\" >> ~/.bashrc
+echo alias ga=\"git add .\" >> ~/.bashrc
+echo alias gcm=\"git commit -m \" >> ~/.bashrc
+echo alias commit=\"git commit -m \" >> ~/.bashrc
+echo alias checkout=\"git checkout \" >> ~/.bashrc
+echo alias gb=\"git branch\" >> ~/.bashrc
+echo alias gl=\"git log\" >> ~/.bashrc
+echo alias h=\"cd ~\" >> ~/.bashrc
+echo alias d=\"cd ~/Downloads\" >> ~/.bashrc
+echo alias p=\"cd ~/projects\" >> ~/.bashrc
+echo alias c=\"cd ~/.config\" >> ~/.bashrc
 
 echo "Source new bashrc..."
 source ~/.bashrc
