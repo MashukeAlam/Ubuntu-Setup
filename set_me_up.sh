@@ -55,6 +55,7 @@ cd ~
 echo "Installing macOS wallpaper"
 git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git
 cd WhiteSur-wallpapers && sudo ./install-gnome-backgrounds.sh
+cd ~
 
 echo "Installing Gnome tweaks"
 sudo apt install gnome-tweak-tool -y
