@@ -38,5 +38,7 @@ Feel free to change the script up here and there to fit to your need. This scrip
  25. Install Google Chrome
  26. Add some aliases
  27. Clean unnecessary packages 
+ 28. Download SF Pro Fonts 
+ 29. Download Monaco Fonst
 
 **Thank you and consider to give this repo a star**
