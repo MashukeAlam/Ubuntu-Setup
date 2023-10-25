@@ -1,6 +1,6 @@
 # A script for setting up Ubuntu for development according to MY need.
 
-Feel free to change the script up here and there to fit to your need. This script will install the following software and is tested to do so properly on Ubuntu 20.04 system. 
+Feel free to change the script up here and there to fit to your need. This script will install the following software and is tested to do so properly on Ubuntu 20.04 & Ubuntu 23.10 system. 
 
 **Credit goes to this repo [(Ubuntu-Dev-Setup)](https://github.com/lukemorales/ubuntu-dev-setup) by [Like Morales](https://github.com/lukemorales)**
 
