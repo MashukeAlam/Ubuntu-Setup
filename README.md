@@ -40,6 +40,6 @@ Feel free to change the script up here and there to fit to your need. This scrip
  27. Clean unnecessary packages 
  28. Download SF Pro Fonts 
  29. Download Monaco Font
- 30. Added figlet and lolcat
+ 30. Install figlet and lolcat
 
 **Thank you and consider to give this repo a star**
