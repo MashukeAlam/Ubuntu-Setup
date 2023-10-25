@@ -126,7 +126,7 @@ git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
 echo 'Installing MPV'
 sudo apt install mpv -y
 echo UP add volume +2 >> ~/.config/mpv/input.conf
-echo UP add volume +2 >> ~/.config/mpv/input.conf
+echo DOWN add volume -2 >> ~/.config/mpv/input.conf
 
 echo 'Installing OBS Studio'
 sudo apt-get install ffmpeg -y && sudo snap install obs-studio
