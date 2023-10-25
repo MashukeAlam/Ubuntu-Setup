@@ -10,13 +10,14 @@ read username
 echo "What email do you want to use to log into Github?"
 read git_config_user_email
 
+echo "Updating system"
 cd ~ && sudo apt update
 
 echo "Installing figlet"
-sudo apt install figlet
+sudo apt install figlet -y
 
 figlet "Installing lolcat"
-sudo apt install lolcat
+sudo snap install lolcat
 
 figlet 'Installing curl'  | lolcat
 sudo apt-get install curl -y
@@ -36,10 +37,6 @@ sudo apt-get update && sudo apt-get install git -y
 
 figlet 'Installing python3-pip' | lolcat
 sudo apt-get install python3-pip -y
-
-figlet 'Installing getgist to download dot files from gist' | lolcat
-sudo pip3 install getgist
-export GETGIST_USER=$username
 
 figlet "Setting up your git global user name and email" | lolcat
 git config --global user.name "$git_config_user_name"
@@ -121,14 +118,14 @@ rails -v
 figlet "Installing VS Code" | lolcat
 sudo snap install code --classic
 
-figlet 'Installing Insomnia Core and Omni Theme'  | lolcat
+figlet 'Installing Insomnia Core'  | lolcat
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
   | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
   | sudo apt-key add -
 sudo apt-get update && sudo apt-get install insomnia -y
-mkdir ~/.config/Insomnia/plugins && cd ~/.config/Insomnia/plugins
-git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
+
+cd ~
 
 figlet 'Installing MPV' | lolcat
 sudo apt install mpv -y
@@ -181,7 +178,8 @@ source ~/.bashrc
 figlet 'Updating and Cleaning Unnecessary Packages' | lolcat
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
 
-figlet "Alhamdulillah Done! Please restart your system..." | lolcat
+figlet "Alhamdulillah Done!" | lolcat
+figlet " Please restart your system..." | lolcat
 
 
 
