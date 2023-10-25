@@ -179,7 +179,7 @@ figlet 'Updating and Cleaning Unnecessary Packages' | lolcat
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
 
 figlet "Alhamdulillah Done!" | lolcat
-figlet " Please restart your system..." | lolcat
+figlet "Please restart your system..." | lolcat
 
 
 
