@@ -71,6 +71,7 @@ sudo apt install gnome-tweak-tool -y
 
 figlet "Doing some customization in gnomes..."
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Light-solid-green'
 
 figlet 'Installing NVM' 
 sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash)"
