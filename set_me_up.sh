@@ -15,65 +15,68 @@ cd ~ && sudo apt update
 echo "Installing figlet"
 sudo apt install figlet
 
-figlet 'Installing curl' 
+figlet "Installing lolcat"
+sudo apt install lolcat
+
+figlet 'Installing curl'  | lolcat
 sudo apt-get install curl -y
 
-figlet 'Installing neofetch' 
+figlet 'Installing neofetch'  | lolcat
 sudo apt-get install neofetch -y
 
 
-figlet "Installing copyq"
+figlet "Installing copyq" | lolcat
 sudo add-apt-repository ppa:hluk/copyq -y
 sudo apt update
 sudo apt install copyq -y
 
-figlet 'Installing latest git' 
+figlet 'Installing latest git'  | lolcat
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt-get update && sudo apt-get install git -y
 
-figlet 'Installing python3-pip'
+figlet 'Installing python3-pip' | lolcat
 sudo apt-get install python3-pip -y
 
-figlet 'Installing getgist to download dot files from gist'
+figlet 'Installing getgist to download dot files from gist' | lolcat
 sudo pip3 install getgist
 export GETGIST_USER=$username
 
-figlet "Setting up your git global user name and email"
+figlet "Setting up your git global user name and email" | lolcat
 git config --global user.name "$git_config_user_name"
 git config --global user.email $git_config_user_email
 
-figlet 'Installing FiraCode'
+figlet 'Installing FiraCode' | lolcat
 sudo apt-get install fonts-firacode -y
 
-figlet 'Installing SF Pro font'
+figlet 'Installing SF Pro font' | lolcat
 wget https://www.cufonfonts.com/get/font/download/d164d0130677c7a1d5bf59c5177e95cc
 
-figlet "Installing Monaco font"
+figlet "Installing Monaco font" | lolcat
 wget 'https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf'
 
-figlet "Installing macOS theme for all accent color..."
+figlet "Installing macOS theme for all accent color..." | lolcat
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
 cd ./WhiteSur-gtk-theme && ./install.sh -t all
 cd ~
 
-figlet "Installing macOS Icon theme"
+figlet "Installing macOS Icon theme" | lolcat
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git
 cd WhiteSur-icon-theme && ./install.sh -a
 cd ~
 
-figlet "Installing macOS wallpaper"
+figlet "Installing macOS wallpaper" | lolcat
 git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git
 cd WhiteSur-wallpapers && sudo ./install-gnome-backgrounds.sh
 cd ~
 
-figlet "Installing Gnome tweaks"
+figlet "Installing Gnome tweaks" | lolcat
 sudo apt install gnome-tweak-tool -y
 
-figlet "Doing some customization in gnomes..."
+figlet "Doing some customization in gnomes..." | lolcat
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Light-solid-green'
 
-figlet 'Installing NVM' 
+figlet 'Installing NVM'  | lolcat
 sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash)"
 
 export NVM_DIR="$HOME/.nvm" && (
@@ -85,15 +88,15 @@ git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-figlet 'Installing NodeJS LTS'
+figlet 'Installing NodeJS LTS' | lolcat
 nvm --version
 nvm install --lts
 nvm current
 
-figlet "Installing yarn"
+figlet "Installing yarn" | lolcat
 npm i -g yarn
 
-figlet "Installing RBENV"
+figlet "Installing RBENV" | lolcat
 sudo apt install libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev -y
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -101,24 +104,24 @@ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 type rbenv
 
-figlet "Installing Ruby 2.7.7"
+figlet "Installing Ruby 2.7.7" | lolcat
 rbenv install 2.7.7
 rbenv global 2.7.7
 ruby -v
 
-figlet "Installing bundler"
+figlet "Installing bundler" | lolcat
 echo "gem: --no-document" > ~/.gemrc
 gem install bundler
 gem env home
 
-figlet "Installing rails"
+figlet "Installing rails" | lolcat
 gem install rails -v 6.0.1
 rails -v
 
-figlet "Installing VS Code"
+figlet "Installing VS Code" | lolcat
 sudo snap install code --classic
 
-figlet 'Installing Insomnia Core and Omni Theme' 
+figlet 'Installing Insomnia Core and Omni Theme'  | lolcat
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
   | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
@@ -127,37 +130,37 @@ sudo apt-get update && sudo apt-get install insomnia -y
 mkdir ~/.config/Insomnia/plugins && cd ~/.config/Insomnia/plugins
 git clone https://github.com/Rocketseat/insomnia-omni.git omni-theme && cd ~
 
-figlet 'Installing MPV'
+figlet 'Installing MPV' | lolcat
 sudo apt install mpv -y
 echo UP add volume +2 >> ~/.config/mpv/input.conf
 echo DOWN add volume -2 >> ~/.config/mpv/input.conf
 
-figlet 'Installing OBS Studio'
+figlet 'Installing OBS Studio' | lolcat
 sudo apt-get install ffmpeg -y && sudo snap install obs-studio
 
-figlet 'Enabling KVM for Android Studio'
+figlet 'Enabling KVM for Android Studio' | lolcat
 sudo apt-get install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager -y
 sudo adduser $USER libvirt
 sudo adduser $USER libvirt-qemu
 
-figlet 'Installing dbeaver'
+figlet 'Installing dbeaver' | lolcat
 wget -c https://dbeaver.io/files/6.0.0/dbeaver-ce_6.0.0_amd64.deb
 sudo dpkg -i -y dbeaver-ce_6.0.0_amd64.deb
 sudo apt-get install -f
 
-figlet 'Installing fzf'
+figlet 'Installing fzf' | lolcat
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
-figlet 'Installing Peek' 
+figlet 'Installing Peek'  | lolcat
 sudo add-apt-repository ppa:peek-developers/stable -y
 sudo apt-get update && sudo apt-get install peek -y
 
-figlet "Installing Google Chrome"
+figlet "Installing Google Chrome" | lolcat
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-figlet "Setting up Bash aliases..."
+figlet "Setting up Bash aliases..." | lolcat
 echo alias gs=\"git status\" >> ~/.bashrc
 echo alias ga=\"git add .\" >> ~/.bashrc
 echo alias gcm=\"git commit -m \" >> ~/.bashrc
@@ -172,13 +175,13 @@ echo alias p=\"cd ~/projects\" >> ~/.bashrc
 echo alias c=\"cd ~/.config\" >> ~/.bashrc
 echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
 
-figlet "Source new bashrc..."
+figlet "Source new bashrc..." | lolcat
 source ~/.bashrc
 
-figlet 'Updating and Cleaning Unnecessary Packages'
+figlet 'Updating and Cleaning Unnecessary Packages' | lolcat
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
 
-echo "Alhamdulillah Done! Please restart your system..."
+figlet "Alhamdulillah Done! Please restart your system..." | lolcat
 
 
 
