@@ -25,6 +25,9 @@ sudo apt-get install curl -y
 figlet 'Installing neofetch'  | lolcat
 sudo apt-get install neofetch -y
 
+figlet 'Installing bat'  | lolcat
+sudo apt-get install bat -y
+
 
 figlet "Installing copyq" | lolcat
 sudo add-apt-repository ppa:hluk/copyq -y
