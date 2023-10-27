@@ -171,6 +171,8 @@ echo alias d=\"cd ~/Downloads\" >> ~/.bashrc
 echo alias p=\"cd ~/projects\" >> ~/.bashrc
 echo alias c=\"cd ~/.config\" >> ~/.bashrc
 echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
+echo alias iii=\"sudo apt install -y\"
+echo alias cl=\"clear\"
 
 figlet "Source new bashrc..." | lolcat
 source ~/.bashrc
