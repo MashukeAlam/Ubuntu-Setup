@@ -51,6 +51,10 @@ wget https://www.cufonfonts.com/get/font/download/d164d0130677c7a1d5bf59c5177e95
 figlet "Installing Monaco font" | lolcat
 wget 'https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf'
 
+figlet "Installing Starship" | lolcat
+curl -sS https://starship.rs/install.sh | sh
+
+
 figlet "Installing macOS theme for all accent color..." | lolcat
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
 cd ./WhiteSur-gtk-theme && ./install.sh -t all
@@ -171,8 +175,14 @@ echo alias d=\"cd ~/Downloads\" >> ~/.bashrc
 echo alias p=\"cd ~/projects\" >> ~/.bashrc
 echo alias c=\"cd ~/.config\" >> ~/.bashrc
 echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
-echo alias iii=\"sudo apt install -y\"
-echo alias cl=\"clear\"
+echo alias iii=\"sudo apt install -y\" >> ~/.bashrc
+echo alias cl=\"clear\" >> ~/.bashrc
+
+figlet "Setting up Starship" | lolcat
+echo eval \"$(starship init bash)\" >> ~/.bashrc
+starship preset nerd-font-symbols -o ~/.config/starship.toml
+
+
 
 figlet "Source new bashrc..." | lolcat
 source ~/.bashrc
