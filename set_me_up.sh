@@ -180,14 +180,12 @@ echo alias c=\"cd ~/.config\" >> ~/.bashrc
 echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
 echo alias iii=\"sudo apt install -y\" >> ~/.bashrc
 echo alias cl=\"clear\" >> ~/.bashrc
-echo "[[ ${BLE_VERSION-} ]] && ble-attach" >> ~/.bashrc
-
 
 figlet "Setting up Starship" | lolcat
-echo eval \"$(starship init bash)\" >> ~/.bashrc
+echo eval \"\$\(starship init bash\)\" >> ~/.bashrc
 starship preset nerd-font-symbols -o ~/.config/starship.toml
 
-
+echo "[[ \${BLE_VERSION-} ]] && ble-attach" >> ~/.bashrc
 
 figlet "Source new bashrc..." | lolcat
 source ~/.bashrc
@@ -198,8 +196,7 @@ sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-
 figlet "Alhamdulillah Done!" | lolcat
 
 echo -e '\033[1mPlease add this line at the *TOP* of .bashrc: [[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach\033[0m'
-
-#figlet "Please restart your system..." | lolcat
+# echo -e '\033[1mPlease add this line at the end of .bashrc: eval "$(starship init bash)"\033[0m'
 
 
 
