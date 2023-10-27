@@ -54,6 +54,13 @@ wget 'https://github.com/todylu/monaco.ttf/blob/master/monaco.ttf'
 figlet "Installing Starship" | lolcat
 curl -sS https://starship.rs/install.sh | sh
 
+figlet "Installing Ble.sh" | lolcat
+cd ~
+git clone --recursive https://github.com/akinomyoga/ble.sh.git
+cd ble.sh
+sudo apt-get install gawk -y
+make install
+cd ~
 
 figlet "Installing macOS theme for all accent color..." | lolcat
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
@@ -177,6 +184,8 @@ echo alias c=\"cd ~/.config\" >> ~/.bashrc
 echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
 echo alias iii=\"sudo apt install -y\" >> ~/.bashrc
 echo alias cl=\"clear\" >> ~/.bashrc
+echo "[[ ${BLE_VERSION-} ]] && ble-attach" >> ~/.bashrc
+
 
 figlet "Setting up Starship" | lolcat
 echo eval \"$(starship init bash)\" >> ~/.bashrc
@@ -191,7 +200,10 @@ figlet 'Updating and Cleaning Unnecessary Packages' | lolcat
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
 
 figlet "Alhamdulillah Done!" | lolcat
-figlet "Please restart your system..." | lolcat
+
+echo -e '\033[1mPlease add this line at the *TOP* of .bashrc: [[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach\033[0m'
+
+#figlet "Please restart your system..." | lolcat
 
 
 
