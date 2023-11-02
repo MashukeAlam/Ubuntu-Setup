@@ -22,6 +22,9 @@ sudo snap install lolcat
 figlet 'Installing curl'  | lolcat
 sudo apt-get install curl -y
 
+figlet "Installing EXA" | lolcat
+sudo apt-get install exa -y
+
 figlet 'Installing neofetch'  | lolcat
 sudo apt-get install neofetch -y
 
@@ -180,6 +183,8 @@ echo alias c=\"cd ~/.config\" >> ~/.bashrc
 echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
 echo alias iii=\"sudo apt install -y\" >> ~/.bashrc
 echo alias cl=\"clear\" >> ~/.bashrc
+echo alias ls=\"exa --icons -F -H --group-directories-first\" >> ~/.bashrc
+
 
 figlet "Setting up Starship" | lolcat
 echo eval \"\$\(starship init bash\)\" >> ~/.bashrc
