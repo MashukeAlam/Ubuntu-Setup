@@ -1,4 +1,4 @@
-echo "Welcome! Let's set this baby up for your pleasure..."
+echo "Welcome! Let's set this machine up"
 echo "Remember that this process will require sudo permission."
 
 echo "What is your Full name?"
