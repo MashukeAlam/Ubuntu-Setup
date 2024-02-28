@@ -168,22 +168,31 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 figlet "Setting up Bash aliases..." | lolcat
-echo alias gs=\"git status\" >> ~/.bashrc
-echo alias ga=\"git add .\" >> ~/.bashrc
-echo alias gcm=\"git commit -m \" >> ~/.bashrc
-echo alias commit=\"git commit -m \" >> ~/.bashrc
-echo alias checkout=\"git checkout \" >> ~/.bashrc
-echo alias gb=\"git branch\" >> ~/.bashrc
-echo alias gl=\"git log\" >> ~/.bashrc
-echo alias gp=\"git push\" >> ~/.bashrc
-echo alias h=\"cd ~\" >> ~/.bashrc
-echo alias d=\"cd ~/Downloads\" >> ~/.bashrc
-echo alias p=\"cd ~/projects\" >> ~/.bashrc
-echo alias c=\"cd ~/.config\" >> ~/.bashrc
-echo alias bashrc=\"nano ~/.bashrc\" >> ~/.bashrc
-echo alias iii=\"sudo apt install -y\" >> ~/.bashrc
-echo alias cl=\"clear\" >> ~/.bashrc
-echo alias ls=\"exa --icons -F -H --group-directories-first\" >> ~/.bashrc
+echo 'alias gs="git status"' >> ~/.bashrc
+echo 'alias ga="git add ."' >> ~/.bashrc
+echo 'alias gcm="git commit -m "' >> ~/.bashrc
+echo 'alias commit="git commit -m "' >> ~/.bashrc
+echo 'alias checkout="git checkout "' >> ~/.bashrc
+echo 'alias gb="git branch"' >> ~/.bashrc
+echo 'alias gl="git log"' >> ~/.bashrc
+echo 'alias gp="git push"' >> ~/.bashrc
+echo 'alias h="cd ~"' >> ~/.bashrc
+echo 'alias d="cd ~/Downloads"' >> ~/.bashrc
+echo 'alias p="cd ~/projects"' >> ~/.bashrc
+echo 'alias c="cd ~/.config"' >> ~/.bashrc
+echo 'alias bashrc="nano ~/.bashrc "' >> ~/.bashrc
+echo 'alias iii="sudo apt install -y"' >> ~/.bashrc
+echo 'alias cl="clear"' >> ~/.bashrc
+echo 'alias gacm="ga && gcm"' >> ~/.bashrc
+echo 'alias gg="git status"' >> ~/.bashrc
+echo 'alias gcd="git checkout development"' >> ~/.bashrc
+echo 'alias gpl="git pull"' >> ~/.bashrc
+echo 'alias gps="git push"' >> ~/.bashrc
+echo 'alias c="code"' >> ~/.bashrc
+echo 'alias gdev="git checkout development"' >> ~/.bashrc
+echo 'alias gmain="git checkout main"' >> ~/.bashrc
+echo 'alias kat="batcat"' >> ~/.bashrc
+echo alias ls=\"exa --icons -F -H --group-directories-first\" >> ~/.bashrc##
 
 
 figlet "Setting up Starship" | lolcat
