@@ -174,6 +174,13 @@ sudo apt-get update && sudo apt-get install peek -y
 print_message "Installing Google Chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+#!/bin/bash
+
+# Function to print colored messages
+print_message() {
+  local message=$1
+  echo -e "\e[1;34m${message}\e[0m"
+}
 
 print_message "Installing Zsh and Oh-My-Zsh"
 sudo apt install zsh -y
@@ -181,16 +188,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 chsh -s $(which zsh)
 
 print_message "Installing Zsh Plugins and Themes"
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-completions
-sed -i 's/^plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)/' ~/.zshrc
+git clone https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+
+sed -i 's/^plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions zsh-autocomplete)/' ~/.zshrc
 
 print_message "Configuring Powerlevel10k Theme"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 sed -i 's/^ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
-
-print_message "Setting up Zsh Aliases..."
 
 print_message "Setting up Zsh Aliases..."
 cat << 'EOF' >> ~/.zshrc
@@ -205,6 +213,45 @@ alias mkdir="mkdir -pv"
 alias cp="cp -i"          # Confirm before overwriting
 alias mv="mv -i"          # Confirm before overwriting
 alias rm="rm -i"          # Confirm before deleting
+alias gs="git status"
+alias ga="git add ."
+alias gcm="git commit -m "
+alias commit="git commit -m "
+alias checkout="git checkout "
+alias gb="git branch"
+alias gl="git log"
+alias gp="git push"
+alias h="cd ~"
+alias d="cd ~/Downloads"
+alias p="cd ~/projects"
+alias c="cd ~/.config"
+alias bashrc="nano ~/.bashrc "
+alias iii="sudo apt install -y"
+alias cl="clear"
+alias gacm="ga && gcm"
+alias gg="git status"
+alias gcd="git checkout development"
+alias gpl="git pull"
+alias gps="git push"
+alias c="code"
+alias gdev="git checkout development"
+alias gmain="git checkout main"
+alias kat="batcat"
+alias black="echo -ne '\e]11;#000000\a'"
+alias white="echo -ne '\e]11;#ffffff\a'"
+# File and Directory Management
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias l="ls -lah"
+alias ll="ls -l"
+alias la="ls -A"
+alias mkdir="mkdir -pv"
+alias cp="cp -i"          # Confirm before overwriting
+alias mv="mv -i"          # Confirm before overwriting
+alias rm="rm -i"          # Confirm before deleting
+
+
 
 # Git Shortcuts
 alias gco="git checkout"
@@ -269,12 +316,10 @@ alias kk="kubectl"
 alias htop="htop -C"
 EOF
 
-print_message "Setting up Starship"
-echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-starship preset nerd-font-symbols -o ~/.config/starship.toml
-
 print_message "Source new zshrc..."
 source ~/.zshrc
+
+print_message "Zsh setup is complete! Please restart your terminal or run 'exec zsh' to start using Zsh."
 
 print_message "Updating and Cleaning Unnecessary Packages"
 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get full-upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
