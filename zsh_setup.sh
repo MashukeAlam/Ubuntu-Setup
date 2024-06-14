@@ -35,6 +35,45 @@ alias mkdir="mkdir -pv"
 alias cp="cp -i"          # Confirm before overwriting
 alias mv="mv -i"          # Confirm before overwriting
 alias rm="rm -i"          # Confirm before deleting
+alias gs="git status"
+alias ga="git add ."
+alias gcm="git commit -m "
+alias commit="git commit -m "
+alias checkout="git checkout "
+alias gb="git branch"
+alias gl="git log"
+alias gp="git push"
+alias h="cd ~"
+alias d="cd ~/Downloads"
+alias p="cd ~/projects"
+alias c="cd ~/.config"
+alias bashrc="nano ~/.bashrc "
+alias iii="sudo apt install -y"
+alias cl="clear"
+alias gacm="ga && gcm"
+alias gg="git status"
+alias gcd="git checkout development"
+alias gpl="git pull"
+alias gps="git push"
+alias c="code"
+alias gdev="git checkout development"
+alias gmain="git checkout main"
+alias kat="batcat"
+alias black="echo -ne '\e]11;#000000\a'"
+alias white="echo -ne '\e]11;#ffffff\a'"
+# File and Directory Management
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias l="ls -lah"
+alias ll="ls -l"
+alias la="ls -A"
+alias mkdir="mkdir -pv"
+alias cp="cp -i"          # Confirm before overwriting
+alias mv="mv -i"          # Confirm before overwriting
+alias rm="rm -i"          # Confirm before deleting
+
+
 
 # Git Shortcuts
 alias gco="git checkout"
