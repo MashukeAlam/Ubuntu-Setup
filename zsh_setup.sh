@@ -16,7 +16,9 @@ ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions $ZSH_CUSTOM/plugins/zsh-completions
-sed -i 's/^plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)/' ~/.zshrc
+git clone https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+
+sed -i 's/^plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions zsh-autocomplete)/' ~/.zshrc
 
 print_message "Configuring Powerlevel10k Theme"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
@@ -137,10 +139,6 @@ alias mroe="more"
 alias kk="kubectl"
 alias htop="htop -C"
 EOF
-
-print_message "Setting up Starship"
-echo 'eval "$(starship init zsh)"' >> ~/.zshrc
-starship preset nerd-font-symbols -o ~/.config/starship.toml
 
 print_message "Source new zshrc..."
 source ~/.zshrc
